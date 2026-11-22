@@ -8,8 +8,7 @@ import {
   useTransform,
 } from 'motion/react';
 import { ArrowDown } from 'lucide-react';
-import { CosmicStarfieldCanvas } from './CosmicStarfieldCanvas';
-import { PythonHeroLogo } from './PythonHeroLogo';
+import { PythonMosaicCanvas } from './PythonMosaicCanvas';
 import { HailCsiSignature } from './SignatureCalligraphy';
 import { CHAPTER_LEADERS, LeaderProfile } from '../data/chapterData';
 
@@ -78,7 +77,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       ref={heroRef}
       className="relative flex min-h-screen w-full flex-col justify-between overflow-hidden bg-[#030304]"
     >
-      <CosmicStarfieldCanvas scrollProgress={scrollProgress} ready={introReady} />
+      <PythonMosaicCanvas scrollProgress={scrollProgress} ready={introReady} />
 
       <div
         aria-hidden="true"
@@ -138,9 +137,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           <HailCsiSignature play={introReady} rotation={-28} className="h-auto w-full" />
         </motion.div>
       </div>
-
-      {/* Centerpiece 3D Python Logo (z-[10]) */}
-      <PythonHeroLogo ready={introReady} scrollProgress={scrollProgress} />
 
       {/* Center Spacer preserving vertical spacing between top bar and lower hero */}
       <div aria-hidden="true" className="pointer-events-none relative flex-1" />
