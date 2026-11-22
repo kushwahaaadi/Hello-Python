@@ -8,7 +8,7 @@ import {
   useTransform,
 } from 'motion/react';
 import { ArrowDown } from 'lucide-react';
-import { PythonMosaicCanvas } from './PythonMosaicCanvas';
+import { MosaicPortraitCanvas } from './MosaicPortraitCanvas';
 import { HailCsiSignature } from './SignatureCalligraphy';
 import { CHAPTER_LEADERS, LeaderProfile } from '../data/chapterData';
 
@@ -77,7 +77,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       ref={heroRef}
       className="relative flex min-h-screen w-full flex-col justify-between overflow-hidden bg-[#030304]"
     >
-      <PythonMosaicCanvas scrollProgress={scrollProgress} ready={introReady} />
+      <MosaicPortraitCanvas scrollProgress={scrollProgress} ready={introReady} />
 
       <div
         aria-hidden="true"

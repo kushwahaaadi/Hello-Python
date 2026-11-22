@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { useReducedMotion } from 'motion/react';
-import { PreloaderOverlay } from './components/PreloaderOverlay';
+import { PythonLogoParticleIntro } from './components/PythonLogoParticleIntro';
 import { Floating3DCsiLogo } from './components/Floating3DCsiLogo';
 import { StickyNav } from './components/StickyNav';
 import { HeroSection } from './components/HeroSection';
@@ -53,7 +53,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-[#030304] text-[#F4F4F5]">
-      <PreloaderOverlay
+      <PythonLogoParticleIntro
         key={introIteration}
         active={showPreloader}
         onComplete={handlePreloaderComplete}
