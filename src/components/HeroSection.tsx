@@ -8,7 +8,7 @@ import {
   useTransform,
 } from 'motion/react';
 import { ArrowDown } from 'lucide-react';
-import { MosaicPortraitCanvas } from './MosaicPortraitCanvas';
+import { PythonLogoParticleCanvas } from './PythonLogoParticleCanvas';
 import { HailCsiSignature } from './SignatureCalligraphy';
 import { CHAPTER_LEADERS, LeaderProfile } from '../data/chapterData';
 
@@ -16,6 +16,7 @@ interface HeroSectionProps {
   introReady: boolean;
   introIteration: number;
   scrollProgress: number;
+  onFormationComplete?: () => void;
   onSelectLeader: (leader: LeaderProfile) => void;
   onExploreWork: () => void;
 }
@@ -27,6 +28,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   introReady,
   introIteration,
   scrollProgress,
+  onFormationComplete,
   onSelectLeader,
   onExploreWork,
 }) => {
@@ -77,7 +79,12 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       ref={heroRef}
       className="relative flex min-h-screen w-full flex-col justify-between overflow-hidden bg-[#030304]"
     >
-      <MosaicPortraitCanvas scrollProgress={scrollProgress} ready={introReady} />
+      {/* Permanent Python Logo Particle Formation Canvas (z-[10]) */}
+      <PythonLogoParticleCanvas
+        scrollProgress={scrollProgress}
+        onFormationComplete={onFormationComplete}
+        replayKey={introIteration}
+      />
 
       <div
         aria-hidden="true"

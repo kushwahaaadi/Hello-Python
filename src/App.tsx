@@ -1,6 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { useReducedMotion } from 'motion/react';
-import { PythonLogoParticleIntro } from './components/PythonLogoParticleIntro';
 import { Floating3DCsiLogo } from './components/Floating3DCsiLogo';
 import { StickyNav } from './components/StickyNav';
 import { HeroSection } from './components/HeroSection';
@@ -13,7 +12,6 @@ import { SiteFooter } from './components/SiteFooter';
 
 export default function App() {
   const prefersReducedMotion = useReducedMotion();
-  const [showPreloader, setShowPreloader] = useState(!prefersReducedMotion);
   const [introReady, setIntroReady] = useState(Boolean(prefersReducedMotion));
   const [introIteration, setIntroIteration] = useState(0);
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -32,16 +30,14 @@ export default function App() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handlePreloaderComplete = useCallback(() => {
-    setShowPreloader(false);
+  const handleFormationComplete = useCallback(() => {
     setIntroReady(true);
   }, []);
 
   const handleReplayIntro = () => {
-    window.scrollTo({ top: 0, behavior: 'auto' });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     setIntroReady(false);
     setIntroIteration((n) => n + 1);
-    setShowPreloader(true);
   };
 
   const scrollToSection = (id: string) => {
@@ -53,12 +49,6 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-[#030304] text-[#F4F4F5]">
-      <PythonLogoParticleIntro
-        key={introIteration}
-        active={showPreloader}
-        onComplete={handlePreloaderComplete}
-      />
-
       <Floating3DCsiLogo
         visible={introReady}
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
@@ -73,6 +63,7 @@ export default function App() {
         introReady={introReady}
         introIteration={introIteration}
         scrollProgress={scrollProgress}
+        onFormationComplete={handleFormationComplete}
         onSelectLeader={() => scrollToSection('about')}
         onExploreWork={() => scrollToSection('register')}
       />
