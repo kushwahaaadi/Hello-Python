@@ -1,0 +1,6 @@
+{
+  "name": "Hail CSI! — Hello Python",
+  "description": "Computer Society of India student chapter showcase featuring an interactive mosaic portrait, selected Python and creative engineering works, leadership directory, and live Python lab.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
