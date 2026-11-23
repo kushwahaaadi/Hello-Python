@@ -143,7 +143,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               ? undefined
               : { scale: signatureScale, y: signatureY, opacity: scriptOpacity }
           }
-          className="relative w-full max-w-[1220px] px-2 sm:px-4 select-none translate-y-[17vh] sm:-translate-y-12"
+          className="relative w-full max-w-[1220px] px-2 sm:px-4 select-none translate-y-[24.5vh] sm:-translate-y-12"
         >
           <HailCsiSignature play={introReady} rotation={isMobile ? -5 : -9} className="h-auto w-full" />
         </motion.div>
