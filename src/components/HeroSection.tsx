@@ -77,9 +77,13 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
       {/* Top Bar: CSI Emblem + "Computer Society of India" Title + Chapter Leadership Credits */}
       <div className="relative z-20 mx-auto flex w-full max-w-[1440px] flex-col gap-3 px-4 pt-4 sm:flex-row sm:items-center sm:justify-between sm:gap-6 sm:px-8 sm:pt-7">
-        {/* Left: Logo Spacer + "Computer Society of India" */}
+        {/* Left: CSI Logo + "Computer Society of India" */}
         <div className="flex items-center gap-3 shrink-0">
-          <div aria-hidden="true" className="h-10 w-10 shrink-0 sm:h-12 sm:w-12" />
+          <img
+            src="./assets/csi_logo_navy.png"
+            alt="Computer Society of India"
+            className="h-10 w-10 sm:h-12 sm:w-12 rounded-full object-contain shrink-0 shadow-sm"
+          />
           <motion.div
             initial={prefersReducedMotion ? false : { opacity: 0, x: -10 }}
             animate={introReady ? { opacity: 1, x: 0 } : { opacity: 0, x: -10 }}

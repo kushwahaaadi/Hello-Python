@@ -44,7 +44,7 @@ export const CHAPTER_LEADERS: LeaderProfile[] = [
       'Co-founded WeGrow Student Craft Collective',
     ],
     featuredProject: 'PyMosaic Chiaroscuro Engine',
-    image: '/assets/leaders/leader_1.jpg',
+    image: './assets/leaders/leader_1.jpg',
   },
   {
     id: 'aditya-kushwaha',
@@ -60,7 +60,7 @@ export const CHAPTER_LEADERS: LeaderProfile[] = [
       'Maintains 4 open-source campus CLI packages',
     ],
     featuredProject: 'CSI Terminal & CLI Kit',
-    image: '/assets/leaders/leader_2.jpg',
+    image: './assets/leaders/leader_2.jpg',
   },
   {
     id: 'aman-raj',
@@ -76,7 +76,7 @@ export const CHAPTER_LEADERS: LeaderProfile[] = [
       'Organized 24-hour HackNight Auditorium Series',
     ],
     featuredProject: 'HackNight Auditorium Series',
-    image: '/assets/leaders/leader_3.jpg',
+    image: './assets/leaders/leader_3.jpg',
   },
 ];
 

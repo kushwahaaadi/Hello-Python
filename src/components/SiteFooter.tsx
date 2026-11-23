@@ -17,7 +17,7 @@ export const SiteFooter: React.FC<SiteFooterProps> = ({
       <div className="mx-auto flex max-w-[1440px] flex-col items-center sm:items-start justify-between gap-6 px-4 sm:flex-row sm:items-center sm:px-10">
         <div className="flex items-center gap-3">
           <img
-            src="/assets/csi_logo_navy.png"
+            src="./assets/csi_logo_navy.png"
             alt="Computer Society of India"
             className="h-8 w-8 rounded-full object-contain"
           />

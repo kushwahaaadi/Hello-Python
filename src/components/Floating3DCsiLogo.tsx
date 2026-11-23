@@ -13,8 +13,8 @@ interface Floating3DCsiLogoProps {
   visible?: boolean;
 }
 
-const NAVY_LOGO_SRC = '/assets/csi_logo_navy.png';
-const GOLD_LOGO_SRC = '/assets/csi_logo_gold.png';
+const NAVY_LOGO_SRC = './assets/csi_logo_navy.png';
+const GOLD_LOGO_SRC = './assets/csi_logo_gold.png';
 
 export const Floating3DCsiLogo: React.FC<Floating3DCsiLogoProps> = ({
   onClick,
@@ -119,6 +119,7 @@ export const Floating3DCsiLogo: React.FC<Floating3DCsiLogoProps> = ({
   );
   const scrollSpin = useTransform(smoothScroll, [0, 0.02, 1], [0, 0, 540]);
   const scrollTiltZ = useTransform(smoothScroll, [0, 0.02, 0.3, 0.65, 1], [0, 0, 12, -10, 0]);
+  const scrollOpacity = useTransform(smoothScroll, [0, 0.015, 0.04], [0, 0, 1]);
 
   const handleClick = () => {
     if (isFloating) {
@@ -143,6 +144,7 @@ export const Floating3DCsiLogo: React.FC<Floating3DCsiLogoProps> = ({
                 left: posX,
                 top: posY,
                 scale: floatScale,
+                opacity: scrollOpacity,
               }
         }
         className="pointer-events-auto absolute [perspective:800px]"
