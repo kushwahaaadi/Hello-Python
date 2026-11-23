@@ -29,13 +29,6 @@ export interface ShowcaseProject {
   codeExcerpt: string;
 }
 
-export interface PythonSnippet {
-  id: string;
-  title: string;
-  subtitle: string;
-  code: string;
-}
-
 export const CHAPTER_LEADERS: LeaderProfile[] = [
   {
     id: 'srishti-trivedi',
@@ -205,60 +198,5 @@ def init(project: str, template: str = "fastapi"):
     codeExcerpt: `async with TaskGroup() as tg:
     for node in cluster_nodes:
         tg.create_task(stream_events(node))`,
-  },
-];
-
-export const PYTHON_SNIPPETS: PythonSnippet[] = [
-  {
-    id: 'hello-csi',
-    title: 'Hello Python',
-    subtitle: 'Chapter greeting & roster summary',
-    code: `chapter = "Computer Society of India"
-motto = "Hail CSI!"
-leaders = ["Srishti Trivedi", "Aditya Kushwaha", "Aman Raj"]
-
-print(f"{motto} — {chapter}")
-print(f"Active Core: {len(leaders)} leads")
-for i, name in enumerate(leaders, 1):
-    print(f"  0{i}. {name}")`,
-  },
-  {
-    id: 'mosaic-shade',
-    title: 'Mosaic Luminance',
-    subtitle: 'Chiaroscuro pixel density curve',
-    code: `light = 0.74
-tiles = [0.15, 0.35, 0.62, 0.88, 0.97]
-
-print("Chiaroscuro Tile Density:")
-for lum in tiles:
-    intensity = round(lum * light * 100)
-    bar = "#" * (intensity // 6)
-    print(f"  {lum:.2f} -> {intensity:2d}%  {bar}")`,
-  },
-  {
-    id: 'fibonacci',
-    title: 'Golden Spiral',
-    subtitle: 'First 9 Fibonacci proportions',
-    code: `a, b = 1, 1
-sequence = []
-for _ in range(9):
-    sequence.append(a)
-    a, b = b, a + b
-
-print("Proportions:", sequence)
-ratio = round(sequence[-1] / sequence[-2], 4)
-print(f"Approximated Phi: {ratio}")`,
-  },
-  {
-    id: 'track-stats',
-    title: 'Chapter Metrics',
-    subtitle: 'Workshop throughput breakdown',
-    code: `workshops = [14, 12, 9, 13]
-total = sum(workshops)
-average = round(total / len(workshops), 1)
-
-print(f"Total Sessions: {total}")
-print(f"Quarterly Mean: {average} workshops")
-print("Peak Quarter:", max(workshops))`,
   },
 ];

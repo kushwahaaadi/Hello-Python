@@ -1,3 +1,11 @@
+@font-face {
+  font-family: 'Centralwell';
+  src: url('/fonts/Centralwell.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 @import "tailwindcss";
 
 @layer base {

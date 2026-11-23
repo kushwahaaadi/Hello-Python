@@ -155,7 +155,7 @@ export const ScrollerAlbum: React.FC<ScrollerAlbumProps> = ({
       {/* Subtle background ambient glow */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_40%,rgba(168,85,247,0.05)_0%,transparent_60%)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_40%,rgba(255,255,255,0.02)_0%,transparent_60%)]"
       />
 
       {/* Top Header & Section Index */}

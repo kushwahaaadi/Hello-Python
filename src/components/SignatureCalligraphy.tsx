@@ -10,7 +10,7 @@ interface SignatureProps {
 export const HailCsiSignature: React.FC<SignatureProps> = ({
   className = '',
   play = true,
-  rotation = -28,
+  rotation = -9,
 }) => {
   const prefersReducedMotion = useReducedMotion();
   const shouldDraw = play || prefersReducedMotion;
@@ -37,18 +37,18 @@ export const HailCsiSignature: React.FC<SignatureProps> = ({
         <clipPath id="hail-one-go-clip">
           <motion.rect
             x="0"
-            y="10"
-            height="660"
-            initial={prefersReducedMotion ? { width: 520 } : { width: 0 }}
-            animate={shouldDraw ? { width: 520 } : { width: 0 }}
+            y="0"
+            height="680"
+            initial={prefersReducedMotion ? { width: 620 } : { width: 0 }}
+            animate={shouldDraw ? { width: 620 } : { width: 0 }}
             transition={
               prefersReducedMotion
                 ? { duration: 0 }
                 : {
-                    duration: 0.52,
-                    delay: t0 + 0.08,
-                    ease: 'linear',
-                  }
+                  duration: 0.52,
+                  delay: t0 + 0.08,
+                  ease: 'linear',
+                }
             }
           />
         </clipPath>
@@ -56,19 +56,19 @@ export const HailCsiSignature: React.FC<SignatureProps> = ({
         {/* Continuous pen reveal for enlarged "CSI!" (right half) */}
         <clipPath id="csi-one-go-clip">
           <motion.rect
-            x="760"
-            y="10"
-            height="660"
-            initial={prefersReducedMotion ? { width: 540 } : { width: 0 }}
-            animate={shouldDraw ? { width: 540 } : { width: 0 }}
+            x="700"
+            y="0"
+            height="680"
+            initial={prefersReducedMotion ? { width: 620 } : { width: 0 }}
+            animate={shouldDraw ? { width: 620 } : { width: 0 }}
             transition={
               prefersReducedMotion
                 ? { duration: 0 }
                 : {
-                    duration: 0.52,
-                    delay: t0 + 0.82,
-                    ease: 'linear',
-                  }
+                  duration: 0.52,
+                  delay: t0 + 0.82,
+                  ease: 'linear',
+                }
             }
           />
         </clipPath>
@@ -81,9 +81,9 @@ export const HailCsiSignature: React.FC<SignatureProps> = ({
             !shouldDraw || prefersReducedMotion
               ? undefined
               : {
-                  opacity: [0.85, 1, 0.85],
-                  y: [0, -6, 0],
-                }
+                opacity: [0.85, 1, 0.85],
+                y: [0, -6, 0],
+              }
           }
           transition={{
             duration: 5.5,
@@ -96,7 +96,7 @@ export const HailCsiSignature: React.FC<SignatureProps> = ({
           <motion.path
             d="M 54 388 C 86 362, 126 320, 146 276 C 160 250, 130 246, 120 278"
             stroke="url(#autograph-ink)"
-            strokeWidth="3"
+            strokeWidth="2.2"
             strokeLinecap="round"
             strokeLinejoin="round"
             initial={prefersReducedMotion ? false : { pathLength: 0, opacity: 0 }}
@@ -105,19 +105,19 @@ export const HailCsiSignature: React.FC<SignatureProps> = ({
               prefersReducedMotion
                 ? { duration: 0 }
                 : {
-                    pathLength: { duration: 0.22, delay: t0, ease: 'easeIn' },
-                    opacity: { duration: 0.08, delay: t0 },
-                  }
+                  pathLength: { duration: 0.22, delay: t0, ease: 'easeIn' },
+                  opacity: { duration: 0.08, delay: t0 },
+                }
             }
           />
 
-          {/* 2. Enlarged "Hail" in Herr Von Muellerhoff */}
+          {/* 2. Enlarged "Hail" in Centralwell */}
           <text
             x="275"
-            y="382"
+            y="390"
             textAnchor="middle"
-            fontFamily="'Herr Von Muellerhoff', cursive"
-            fontSize="278"
+            fontFamily="'Centralwell', cursive"
+            fontSize="295"
             fontWeight="400"
             letterSpacing="2"
             fill="url(#autograph-ink)"
@@ -130,7 +130,7 @@ export const HailCsiSignature: React.FC<SignatureProps> = ({
           <motion.path
             d="M 426 368 C 530 408, 735 402, 845 326"
             stroke="url(#autograph-ink)"
-            strokeWidth="2.8"
+            strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
             initial={prefersReducedMotion ? false : { pathLength: 0, opacity: 0 }}
@@ -139,19 +139,19 @@ export const HailCsiSignature: React.FC<SignatureProps> = ({
               prefersReducedMotion
                 ? { duration: 0 }
                 : {
-                    pathLength: { duration: 0.36, delay: t0 + 0.52, ease: 'linear' },
-                    opacity: { duration: 0.08, delay: t0 + 0.52 },
-                  }
+                  pathLength: { duration: 0.36, delay: t0 + 0.52, ease: 'linear' },
+                  opacity: { duration: 0.08, delay: t0 + 0.52 },
+                }
             }
           />
 
-          {/* 4. Enlarged "CSI!" in Herr Von Muellerhoff */}
+          {/* 4. Enlarged "CSI!" in Centralwell */}
           <text
             x="1005"
-            y="382"
+            y="390"
             textAnchor="middle"
-            fontFamily="'Herr Von Muellerhoff', cursive"
-            fontSize="268"
+            fontFamily="'Centralwell', cursive"
+            fontSize="285"
             fontWeight="400"
             letterSpacing="4"
             fill="url(#autograph-ink)"
@@ -164,7 +164,7 @@ export const HailCsiSignature: React.FC<SignatureProps> = ({
           <motion.path
             d="M 1168 370 C 1245 356, 1262 380, 1185 400 C 920 426, 390 442, 95 452"
             stroke="url(#autograph-ink)"
-            strokeWidth="3.1"
+            strokeWidth="2.2"
             strokeLinecap="round"
             strokeLinejoin="round"
             initial={prefersReducedMotion ? false : { pathLength: 0, opacity: 0 }}
@@ -173,9 +173,9 @@ export const HailCsiSignature: React.FC<SignatureProps> = ({
               prefersReducedMotion
                 ? { duration: 0 }
                 : {
-                    pathLength: { duration: 0.48, delay: t0 + 1.28, ease: 'easeOut' },
-                    opacity: { duration: 0.08, delay: t0 + 1.28 },
-                  }
+                  pathLength: { duration: 0.48, delay: t0 + 1.28, ease: 'easeOut' },
+                  opacity: { duration: 0.08, delay: t0 + 1.28 },
+                }
             }
           />
         </motion.g>

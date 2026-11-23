@@ -7,7 +7,6 @@ import {
   useSpring,
   useTransform,
 } from 'motion/react';
-import { CsiEmblem } from './CsiEmblem';
 
 interface Floating3DCsiLogoProps {
   onClick?: () => void;
@@ -145,12 +144,12 @@ export const Floating3DCsiLogo: React.FC<Floating3DCsiLogoProps> = ({
           whileTap={prefersReducedMotion ? undefined : { scale: 0.94 }}
           className="group relative flex h-12 w-12 items-center justify-center rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white sm:h-14 sm:w-14"
         >
-          {/* Subtle premium transition glow without making it flashy */}
+          {/* Subtle refined silver outshine */}
           <span
             aria-hidden="true"
             className={`pointer-events-none absolute -inset-1 rounded-full blur-md transition-all duration-700 ease-out ${
               isGold
-                ? 'opacity-60 bg-[radial-gradient(circle,rgba(212,175,55,0.45)_0%,transparent_70%)]'
+                ? 'opacity-35 bg-[radial-gradient(circle,rgba(255,255,255,0.3)_0%,rgba(200,215,235,0.12)_50%,transparent_70%)]'
                 : 'opacity-0'
             }`}
           />
@@ -225,11 +224,12 @@ export const Floating3DCsiLogo: React.FC<Floating3DCsiLogoProps> = ({
                     }`}
                   />
 
-                  {/* Variant 2: Metallic Gold (#D4AF37) with Pure White (#FFFFFF) Lettering */}
+                  {/* Variant 2: Polished Metallic Silver with Pure White Lettering */}
                   <img
                     src={GOLD_LOGO_SRC}
-                    alt="Computer Society of India (Gold Edition)"
-                    className={`absolute inset-0 h-full w-full object-contain rounded-full shadow-[0_2px_16px_rgba(212,175,55,0.35)] transition-opacity duration-600 ease-in-out ${
+                    alt="Computer Society of India (Silver Edition)"
+                    style={isGold ? { filter: 'grayscale(100%) brightness(1.1) contrast(1.05)' } : undefined}
+                    className={`absolute inset-0 h-full w-full object-contain rounded-full shadow-[0_2px_12px_rgba(255,255,255,0.2)] transition-all duration-600 ease-in-out ${
                       isGold ? 'opacity-100' : 'opacity-0 pointer-events-none'
                     }`}
                   />

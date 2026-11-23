@@ -40,6 +40,13 @@ export const StickyNav: React.FC<StickyNavProps> = ({
           </button>
           <button
             type="button"
+            onClick={() => onScrollToSection('curriculum')}
+            className="transition-colors hover:text-white whitespace-nowrap shrink-0"
+          >
+            Curriculum
+          </button>
+          <button
+            type="button"
             onClick={() => onScrollToSection('about')}
             className="transition-colors hover:text-white whitespace-nowrap shrink-0"
           >

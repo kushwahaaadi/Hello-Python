@@ -4,6 +4,7 @@ import { Floating3DCsiLogo } from './components/Floating3DCsiLogo';
 import { StickyNav } from './components/StickyNav';
 import { HeroSection } from './components/HeroSection';
 import { RegistrationSection } from './components/RegistrationSection';
+import { CurriculumSection } from './components/CurriculumSection';
 import { AboutSection } from './components/AboutSection';
 import { HackaccinoSection } from './components/HackaccinoSection';
 import { ScrollerAlbum } from './components/ScrollerAlbum';
@@ -65,11 +66,11 @@ export default function App() {
         scrollProgress={scrollProgress}
         onFormationComplete={handleFormationComplete}
         onSelectLeader={() => scrollToSection('about')}
-        onExploreWork={() => scrollToSection('register')}
       />
 
       <main>
         <RegistrationSection />
+        <CurriculumSection />
         <AboutSection />
         <HackaccinoSection />
         <ScrollerAlbum />

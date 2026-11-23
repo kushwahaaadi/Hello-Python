@@ -1,6 +1,5 @@
 import React from 'react';
 import { RotateCcw } from 'lucide-react';
-import { CsiEmblem } from './CsiEmblem';
 
 interface SiteFooterProps {
   showReplay: boolean;
@@ -17,11 +16,13 @@ export const SiteFooter: React.FC<SiteFooterProps> = ({
     <footer className="border-t border-white/10 bg-[#0a0a0b] py-14">
       <div className="mx-auto flex max-w-[1440px] flex-col items-start justify-between gap-6 px-6 sm:flex-row sm:items-center sm:px-10">
         <div className="flex items-center gap-3">
-          <CsiEmblem className="h-8 w-8 text-zinc-300" />
+          <img
+            src="/assets/csi_logo_navy.png"
+            alt="Computer Society of India"
+            className="h-8 w-8 rounded-full object-contain"
+          />
           <div className="text-[11px] font-medium uppercase tracking-[0.05em] text-[#f2f2f2]/55">
             <span className="text-zinc-200 font-semibold">Computer Society of India</span>
-            <span className="mx-2" aria-hidden="true">·</span>
-            <span>Student Chapter</span>
           </div>
         </div>
 
@@ -52,6 +53,13 @@ export const SiteFooter: React.FC<SiteFooterProps> = ({
           </button>
           <button
             type="button"
+            onClick={() => onScrollToSection('curriculum')}
+            className="transition-colors hover:text-white hover:underline underline-offset-4"
+          >
+            Curriculum
+          </button>
+          <button
+            type="button"
             onClick={() => onScrollToSection('about')}
             className="transition-colors hover:text-white hover:underline underline-offset-4"
           >
@@ -71,7 +79,6 @@ export const SiteFooter: React.FC<SiteFooterProps> = ({
           >
             FAQ
           </button>
-          <span className="tabular-nums font-mono-code text-zinc-500 lowercase">© 2026 csi chapter</span>
         </div>
       </div>
     </footer>
