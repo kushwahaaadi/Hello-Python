@@ -68,22 +68,18 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       />
 
       {/* Top Bar: CSI Emblem + "Computer Society of India" Title + Chapter Leadership Credits */}
-      <div className="relative z-20 mx-auto flex w-full max-w-[1440px] items-start justify-between gap-6 px-5 pt-5 sm:px-8 sm:pt-7">
+      <div className="relative z-20 mx-auto flex w-full max-w-[1440px] items-center justify-between gap-6 px-5 pt-5 sm:px-8 sm:pt-7">
         {/* Left: Logo Spacer + "Computer Society of India" */}
-        <div className="flex items-center gap-3.5 shrink-0">
+        <div className="flex items-center gap-3 shrink-0">
           <div aria-hidden="true" className="h-11 w-11 shrink-0 sm:h-12 sm:w-12" />
           <motion.div
             initial={prefersReducedMotion ? false : { opacity: 0, x: -10 }}
             animate={introReady ? { opacity: 1, x: 0 } : { opacity: 0, x: -10 }}
             transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-            className="flex flex-col text-left"
+            className="flex items-center"
           >
-            <span className="block text-[11px] font-medium uppercase tracking-[0.05em] text-[#f2f2f2]/55">
-              Chapter:
-            </span>
-            <span className="mt-0.5 block text-[13px] font-medium text-[#f2f2f2] whitespace-nowrap">
-              <span className="hidden sm:inline">Computer Society of India</span>
-              <span className="sm:hidden">CSI Chapter</span>
+            <span className="text-[13px] font-medium tracking-tight text-[#f2f2f2] sm:text-[14px] whitespace-nowrap">
+              Computer Society of India
             </span>
           </motion.div>
         </div>
