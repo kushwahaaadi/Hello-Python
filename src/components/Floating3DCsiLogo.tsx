@@ -13,8 +13,11 @@ interface Floating3DCsiLogoProps {
   visible?: boolean;
 }
 
-const NAVY_LOGO_SRC = './assets/csi_logo_navy.png';
-const GOLD_LOGO_SRC = './assets/csi_logo_gold.png';
+import csiNavyLogo from '../assets/images/csi_logo_navy.png';
+import csiGoldLogo from '../assets/images/csi_logo_gold.png';
+
+const NAVY_LOGO_SRC = csiNavyLogo;
+const GOLD_LOGO_SRC = csiGoldLogo;
 
 export const Floating3DCsiLogo: React.FC<Floating3DCsiLogoProps> = ({
   onClick,

@@ -9,6 +9,7 @@ import {
 import { PythonLogoParticleCanvas } from './PythonLogoParticleCanvas';
 import { HailCsiSignature } from './SignatureCalligraphy';
 import { CHAPTER_LEADERS, LeaderProfile } from '../data/chapterData';
+import csiNavyLogo from '../assets/images/csi_logo_navy.png';
 
 interface HeroSectionProps {
   introReady: boolean;
@@ -80,7 +81,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
         {/* Left: CSI Logo + "Computer Society of India" */}
         <div className="flex items-center gap-3 shrink-0">
           <img
-            src="./assets/csi_logo_navy.png"
+            src={csiNavyLogo}
             alt="Computer Society of India"
             className="h-10 w-10 sm:h-12 sm:w-12 rounded-full object-contain shrink-0 shadow-sm"
           />
