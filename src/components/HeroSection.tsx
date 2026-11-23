@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import {
   motion,
   useReducedMotion,
@@ -31,6 +31,14 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 }) => {
   const heroRef = useRef<HTMLElement | null>(null);
   const prefersReducedMotion = useReducedMotion();
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 640);
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const { scrollYProgress: heroScroll } = useScroll({
     target: heroRef,
@@ -123,7 +131,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
         </div>
       </div>
 
-      {/* Background Signature Layer (z-[1]): Spanning from top of Hello to below Aman Raj */}
+      {/* Background Signature Layer (z-[1]): Positioned below logo on mobile, center-tilt on desktop */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 z-[1] flex items-center justify-center overflow-hidden"
@@ -135,9 +143,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               ? undefined
               : { scale: signatureScale, y: signatureY, opacity: scriptOpacity }
           }
-          className="relative w-full max-w-[1220px] px-3 sm:px-4 select-none -translate-y-4 sm:-translate-y-12"
+          className="relative w-full max-w-[1220px] px-2 sm:px-4 select-none translate-y-[17vh] sm:-translate-y-12"
         >
-          <HailCsiSignature play={introReady} rotation={-9} className="h-auto w-full" />
+          <HailCsiSignature play={introReady} rotation={isMobile ? -5 : -9} className="h-auto w-full" />
         </motion.div>
       </div>
 
