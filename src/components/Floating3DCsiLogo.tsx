@@ -24,6 +24,14 @@ export const Floating3DCsiLogo: React.FC<Floating3DCsiLogoProps> = ({
   const [boostCount, setBoostCount] = useState(0);
   const [isFloating, setIsFloating] = useState(false);
   const [isGold, setIsGold] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 640);
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const { scrollYProgress } = useScroll();
   const smoothScroll = useSpring(scrollYProgress, {
@@ -93,17 +101,21 @@ export const Floating3DCsiLogo: React.FC<Floating3DCsiLogoProps> = ({
   const posX = useTransform(
     smoothScroll,
     [0, 0.02, 0.14, 0.3, 0.52, 0.74, 0.92, 1],
-    ['2.2vw', '2.2vw', '10vw', '74vw', '78vw', '8vw', '76vw', '78vw']
+    isMobile
+      ? ['16px', '16px', '6vw', '62vw', '65vw', '6vw', '62vw', '65vw']
+      : ['2.2vw', '2.2vw', '10vw', '74vw', '78vw', '8vw', '76vw', '78vw']
   );
   const posY = useTransform(
     smoothScroll,
     [0, 0.02, 0.14, 0.3, 0.52, 0.74, 0.92, 1],
-    ['2.2vh', '2.2vh', '14vh', '18vh', '42vh', '56vh', '68vh', '70vh']
+    isMobile
+      ? ['16px', '16px', '10vh', '15vh', '38vh', '52vh', '64vh', '66vh']
+      : ['2.2vh', '2.2vh', '14vh', '18vh', '42vh', '56vh', '68vh', '70vh']
   );
   const floatScale = useTransform(
     smoothScroll,
     [0, 0.02, 0.1, 0.24, 1],
-    [1, 1, 1.85, 3, 3]
+    isMobile ? [1, 1, 1.35, 1.75, 1.75] : [1, 1, 1.85, 3, 3]
   );
   const scrollSpin = useTransform(smoothScroll, [0, 0.02, 1], [0, 0, 540]);
   const scrollTiltZ = useTransform(smoothScroll, [0, 0.02, 0.3, 0.65, 1], [0, 0, 12, -10, 0]);
@@ -142,7 +154,7 @@ export const Floating3DCsiLogo: React.FC<Floating3DCsiLogoProps> = ({
           title="Computer Society of India"
           whileHover={prefersReducedMotion ? undefined : { scale: 1.12 }}
           whileTap={prefersReducedMotion ? undefined : { scale: 0.94 }}
-          className="group relative flex h-12 w-12 items-center justify-center rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white sm:h-14 sm:w-14"
+          className="group relative flex h-10 w-10 sm:h-14 sm:w-14 items-center justify-center rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
         >
           {/* Subtle refined silver outshine */}
           <span

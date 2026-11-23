@@ -72,15 +72,15 @@ export const FaqSection: React.FC<FaqSectionProps> = ({ id = 'faq' }) => {
       id={id}
       ref={containerRef}
       aria-label="Frequently Asked Questions"
-      className="relative z-10 w-full min-h-screen flex items-center justify-center border-t border-white/10 bg-[#030304] py-24 sm:py-32 overflow-hidden text-[#F4F4F5]"
+      className="relative z-10 w-full min-h-screen flex items-center justify-center border-t border-white/10 bg-[#030304] py-16 sm:py-32 overflow-hidden text-[#F4F4F5]"
     >
-      <div className="relative mx-auto w-full max-w-4xl px-6 sm:px-10">
+      <div className="relative mx-auto w-full max-w-4xl px-4 sm:px-10">
         {/* Eyebrow */}
         <motion.div
           initial={prefersReducedMotion ? false : { opacity: 0, y: 12 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 12 }}
           transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
-          className="flex items-center justify-center gap-2 mb-4"
+          className="flex items-center justify-center gap-2 mb-3 sm:mb-4"
         >
           <span className="h-1.5 w-1.5 rounded-full bg-white/60" />
           <span className="text-[10px] sm:text-xs font-semibold uppercase tracking-[0.14em] text-[#f2f2f2]/60 font-mono">
@@ -93,7 +93,7 @@ export const FaqSection: React.FC<FaqSectionProps> = ({ id = 'faq' }) => {
           initial={prefersReducedMotion ? false : { opacity: 0, y: 22 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 22 }}
           transition={{ duration: 0.75, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-          className="text-center font-editorial text-4xl sm:text-6xl lg:text-7xl font-normal italic tracking-[-0.02em] text-[#F4F4F5] [text-wrap:balance]"
+          className="text-center font-editorial text-3xl sm:text-6xl lg:text-7xl font-normal italic tracking-[-0.02em] text-[#F4F4F5] [text-wrap:balance]"
         >
           Frequently Asked Questions
         </motion.h2>
@@ -103,13 +103,13 @@ export const FaqSection: React.FC<FaqSectionProps> = ({ id = 'faq' }) => {
           initial={prefersReducedMotion ? false : { opacity: 0, y: 14 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 14 }}
           transition={{ duration: 0.7, delay: 0.18, ease: [0.22, 1, 0.36, 1] }}
-          className="mt-3 text-center text-xs sm:text-sm font-light text-[#f2f2f2]/70 font-sans"
+          className="mt-2.5 sm:mt-3 text-center text-xs sm:text-sm font-light text-[#f2f2f2]/70 font-sans"
         >
           Everything you need to know about attending the Hello Python workshop
         </motion.p>
 
         {/* FAQ Items */}
-        <div className="mt-10 sm:mt-12 space-y-3">
+        <div className="mt-8 sm:mt-12 space-y-3">
           {FAQ_DATA.map((item, idx) => {
             const isOpen = openId === item.id;
 
@@ -125,7 +125,7 @@ export const FaqSection: React.FC<FaqSectionProps> = ({ id = 'faq' }) => {
                 }}
               >
                 <div
-                  className={`rounded-2xl border transition-all duration-300 backdrop-blur-md overflow-hidden ${
+                  className={`rounded-xl sm:rounded-2xl border transition-all duration-300 backdrop-blur-md overflow-hidden ${
                     isOpen
                       ? 'border-white/25 bg-[#0e0e13]/95 shadow-[0_16px_50px_rgba(0,0,0,0.7)]'
                       : 'border-white/10 bg-[#08080b]/70 hover:border-white/20 hover:bg-[#0c0c10]/80 shadow-[0_4px_20px_rgba(0,0,0,0.3)]'
@@ -135,9 +135,9 @@ export const FaqSection: React.FC<FaqSectionProps> = ({ id = 'faq' }) => {
                     type="button"
                     onClick={() => toggleItem(item.id)}
                     aria-expanded={isOpen}
-                    className="w-full flex items-center justify-between gap-4 px-5 sm:px-7 py-4 sm:py-5 text-left cursor-pointer transition-colors"
+                    className="w-full flex items-center justify-between gap-3 px-4 sm:px-7 py-3.5 sm:py-5 text-left cursor-pointer transition-colors"
                   >
-                    <span className="text-sm sm:text-base lg:text-lg font-medium text-white/95 tracking-[-0.01em] font-sans">
+                    <span className="text-xs sm:text-base lg:text-lg font-medium text-white/95 tracking-[-0.01em] font-sans">
                       {item.question}
                     </span>
 
@@ -166,7 +166,7 @@ export const FaqSection: React.FC<FaqSectionProps> = ({ id = 'faq' }) => {
                         transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
                         className="overflow-hidden"
                       >
-                        <div className="px-5 sm:px-7 pb-5 pt-2 text-xs sm:text-sm font-light leading-relaxed text-zinc-300 font-sans border-t border-white/10">
+                        <div className="px-4 sm:px-7 pb-4 sm:pb-5 pt-2 text-xs sm:text-sm font-light leading-relaxed text-zinc-300 font-sans border-t border-white/10">
                           <p>{item.answer}</p>
                         </div>
                       </motion.div>

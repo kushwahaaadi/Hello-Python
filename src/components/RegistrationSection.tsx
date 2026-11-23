@@ -87,7 +87,7 @@ export const RegistrationSection: React.FC = () => {
         className="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 h-[520px] w-[800px] rounded-full bg-gradient-to-b from-white/[0.03] via-transparent to-transparent blur-[140px]"
       />
 
-      <div className="relative mx-auto max-w-[1400px] px-6 sm:px-12 lg:px-20">
+      <div className="relative mx-auto max-w-[1400px] px-4 sm:px-12 lg:px-20">
         {/* Section Header */}
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
@@ -96,16 +96,16 @@ export const RegistrationSection: React.FC = () => {
             viewport={{ once: true, amount: 0.25 }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           >
-            <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3.5 py-1 text-xs font-semibold uppercase tracking-[0.1em] text-[#f2f2f2]/75 backdrop-blur-md font-mono">
+            <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 text-[11px] sm:text-xs font-semibold uppercase tracking-[0.1em] text-[#f2f2f2]/75 backdrop-blur-md font-mono">
               <span className="h-1.5 w-1.5 rounded-full bg-white/80 animate-pulse" />
               <span>Official Event Registration</span>
             </div>
 
-            <h2 className="font-editorial mt-5 text-4xl sm:text-6xl lg:text-7xl font-normal italic tracking-[-0.02em] text-[#F4F4F5] leading-[1.04] [text-wrap:balance]">
+            <h2 className="font-editorial mt-4 sm:mt-5 text-3xl sm:text-6xl lg:text-7xl font-normal italic tracking-[-0.02em] text-[#F4F4F5] leading-[1.04] [text-wrap:balance]">
               Reserve Your Spot.
             </h2>
 
-            <p className="mt-4 text-base sm:text-lg leading-relaxed text-zinc-300 font-sans font-light max-w-2xl mx-auto">
+            <p className="mt-3 sm:mt-4 text-sm sm:text-lg leading-relaxed text-zinc-300 font-sans font-light max-w-2xl mx-auto">
               Join us for an unforgettable chapter experience. Register via Luma for instant confirmation, access passes, and calendar synchronization.
             </p>
           </motion.div>
@@ -117,11 +117,11 @@ export const RegistrationSection: React.FC = () => {
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
           viewport={{ once: true, amount: 0.15 }}
           transition={{ duration: 0.8, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-          className="mt-14 sm:mt-20 mx-auto max-w-[920px]"
+          className="mt-10 sm:mt-20 mx-auto max-w-[920px]"
         >
-          <div className="relative rounded-2xl border border-white/15 bg-[#0a0a0c]/85 p-4 sm:p-7 backdrop-blur-2xl shadow-[0_20px_60px_rgba(0,0,0,0.7)] ring-1 ring-white/10">
+          <div className="relative rounded-2xl border border-white/15 bg-[#0a0a0c]/85 p-3 sm:p-7 backdrop-blur-2xl shadow-[0_20px_60px_rgba(0,0,0,0.7)] ring-1 ring-white/10">
             {/* Top Bar / Event Badge */}
-            <div className="mb-4 flex items-center justify-between px-2 text-xs text-zinc-400 font-mono">
+            <div className="mb-3 sm:mb-4 flex items-center justify-between px-1 text-[11px] sm:text-xs text-zinc-400 font-mono">
               <span className="flex items-center gap-1.5 text-zinc-200">
                 <Calendar className="h-3.5 w-3.5" />
                 <span>Luma Event Portal</span>
@@ -144,12 +144,12 @@ export const RegistrationSection: React.FC = () => {
                 aria-hidden="false"
                 tabIndex={0}
                 title="Luma Event Registration"
-                className="w-full min-h-[520px] sm:min-h-[560px]"
+                className="w-full min-h-[460px] sm:min-h-[560px]"
               />
             </div>
 
             {/* Direct Fallback Link */}
-            <div className="mt-5 flex flex-col sm:flex-row items-center justify-between gap-3 px-2 pt-3 border-t border-white/10 text-xs text-zinc-400">
+            <div className="mt-4 sm:mt-5 flex flex-col sm:flex-row items-center justify-between gap-2.5 sm:gap-3 px-1 pt-3 border-t border-white/10 text-[11px] sm:text-xs text-zinc-400">
               <span>Trouble viewing the embed widget?</span>
               <a
                 href="https://lu.ma/event/evt-dmCG5tCmR6K01vB"

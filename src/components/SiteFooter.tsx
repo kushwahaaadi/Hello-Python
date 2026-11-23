@@ -13,8 +13,8 @@ export const SiteFooter: React.FC<SiteFooterProps> = ({
   onScrollToSection,
 }) => {
   return (
-    <footer className="border-t border-white/10 bg-[#0a0a0b] py-14">
-      <div className="mx-auto flex max-w-[1440px] flex-col items-start justify-between gap-6 px-6 sm:flex-row sm:items-center sm:px-10">
+    <footer className="border-t border-white/10 bg-[#0a0a0b] py-10 sm:py-14">
+      <div className="mx-auto flex max-w-[1440px] flex-col items-center sm:items-start justify-between gap-6 px-4 sm:flex-row sm:items-center sm:px-10">
         <div className="flex items-center gap-3">
           <img
             src="/assets/csi_logo_navy.png"
@@ -26,7 +26,7 @@ export const SiteFooter: React.FC<SiteFooterProps> = ({
           </div>
         </div>
 
-        <div className="flex flex-wrap items-center gap-6 text-[11px] font-medium uppercase tracking-[0.05em] text-[#f2f2f2]/55">
+        <div className="flex flex-wrap items-center justify-center sm:justify-start gap-4 sm:gap-6 text-[10px] sm:text-[11px] font-medium uppercase tracking-[0.05em] text-[#f2f2f2]/55">
           {showReplay && (
             <button
               type="button"

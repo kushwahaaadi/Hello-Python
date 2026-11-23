@@ -25,15 +25,15 @@ export const HackaccinoSection: React.FC<HackaccinoSectionProps> = ({ id = 'hack
       id={id}
       ref={containerRef}
       aria-label="Hackaccino - Flagship Hackathon"
-      className="relative z-10 w-full min-h-[85vh] flex items-center justify-center border-t border-white/10 bg-[#030304] py-24 sm:py-32 overflow-hidden text-[#F4F4F5]"
+      className="relative z-10 w-full min-h-[85vh] flex items-center justify-center border-t border-white/10 bg-[#030304] py-16 sm:py-32 overflow-hidden text-[#F4F4F5]"
     >
-      <div className="relative mx-auto max-w-4xl px-6 sm:px-10 text-center">
+      <div className="relative mx-auto max-w-4xl px-4 sm:px-10 text-center">
         {/* Eyebrow */}
         <motion.div
           initial={prefersReducedMotion ? false : { opacity: 0, y: 12 }}
           animate={isContainerInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 12 }}
           transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
-          className="flex items-center justify-center gap-2 mb-4"
+          className="flex items-center justify-center gap-2 mb-3 sm:mb-4"
         >
           <span className="h-1.5 w-1.5 rounded-full bg-white/60 animate-pulse" />
           <span className="text-[10px] sm:text-xs font-semibold uppercase tracking-[0.14em] text-[#f2f2f2]/60 font-mono">
@@ -46,7 +46,7 @@ export const HackaccinoSection: React.FC<HackaccinoSectionProps> = ({ id = 'hack
           initial={prefersReducedMotion ? false : { opacity: 0, y: 22 }}
           animate={isContainerInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 22 }}
           transition={{ duration: 0.75, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-          className="font-editorial text-4xl sm:text-6xl lg:text-7xl font-normal italic tracking-[-0.02em] text-[#F4F4F5]"
+          className="font-editorial text-3xl sm:text-6xl lg:text-7xl font-normal italic tracking-[-0.02em] text-[#F4F4F5]"
         >
           Hackaccino
         </motion.h2>
@@ -56,7 +56,7 @@ export const HackaccinoSection: React.FC<HackaccinoSectionProps> = ({ id = 'hack
           initial={prefersReducedMotion ? false : { opacity: 0, y: 14 }}
           animate={isContainerInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 14 }}
           transition={{ duration: 0.7, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-          className="mt-3 text-xs sm:text-sm font-medium uppercase tracking-[0.12em] text-zinc-400 font-mono"
+          className="mt-2.5 sm:mt-3 text-xs sm:text-sm font-medium uppercase tracking-[0.12em] text-zinc-400 font-mono"
         >
           Where Ideas Turn Into Innovation
         </motion.p>
@@ -66,19 +66,19 @@ export const HackaccinoSection: React.FC<HackaccinoSectionProps> = ({ id = 'hack
           initial={prefersReducedMotion ? false : { opacity: 0, y: 18 }}
           animate={isContainerInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 18 }}
           transition={{ duration: 0.75, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
-          className="mt-8 sm:mt-10 grid grid-cols-2 sm:grid-cols-3 gap-3 max-w-xl mx-auto"
+          className="mt-6 sm:mt-10 grid grid-cols-3 gap-2 sm:gap-3 max-w-xl mx-auto"
         >
-          <div className="rounded-xl border border-white/10 bg-[#0a0a0d]/80 p-3 backdrop-blur-md">
-            <span className="block text-xl sm:text-2xl font-editorial italic text-white">1,200+</span>
-            <span className="text-[10px] uppercase tracking-wider text-zinc-400 font-mono">Builders</span>
+          <div className="rounded-xl border border-white/10 bg-[#0a0a0d]/80 p-2 sm:p-3 backdrop-blur-md">
+            <span className="block text-lg sm:text-2xl font-editorial italic text-white">1,200+</span>
+            <span className="text-[9px] sm:text-[10px] uppercase tracking-wider text-zinc-400 font-mono">Builders</span>
           </div>
-          <div className="rounded-xl border border-white/10 bg-[#0a0a0d]/80 p-3 backdrop-blur-md">
-            <span className="block text-xl sm:text-2xl font-editorial italic text-white">24 Hours</span>
-            <span className="text-[10px] uppercase tracking-wider text-zinc-400 font-mono">Non-Stop</span>
+          <div className="rounded-xl border border-white/10 bg-[#0a0a0d]/80 p-2 sm:p-3 backdrop-blur-md">
+            <span className="block text-lg sm:text-2xl font-editorial italic text-white">24 Hours</span>
+            <span className="text-[9px] sm:text-[10px] uppercase tracking-wider text-zinc-400 font-mono">Non-Stop</span>
           </div>
-          <div className="col-span-2 sm:col-span-1 rounded-xl border border-white/10 bg-[#0a0a0d]/80 p-3 backdrop-blur-md">
-            <span className="block text-xl sm:text-2xl font-editorial italic text-white">Infinite</span>
-            <span className="text-[10px] uppercase tracking-wider text-zinc-400 font-mono">Possibilities</span>
+          <div className="rounded-xl border border-white/10 bg-[#0a0a0d]/80 p-2 sm:p-3 backdrop-blur-md">
+            <span className="block text-lg sm:text-2xl font-editorial italic text-white">Infinite</span>
+            <span className="text-[9px] sm:text-[10px] uppercase tracking-wider text-zinc-400 font-mono">Scope</span>
           </div>
         </motion.div>
 
@@ -94,7 +94,7 @@ export const HackaccinoSection: React.FC<HackaccinoSectionProps> = ({ id = 'hack
                   delay: 0.25 + idx * 0.06,
                   ease: [0.22, 1, 0.36, 1],
                 }}
-                className="text-base sm:text-lg lg:text-xl font-light leading-relaxed text-[#f2f2f2]/85 tracking-[-0.01em]"
+                className="text-sm sm:text-lg lg:text-xl font-light leading-relaxed text-[#f2f2f2]/85 tracking-[-0.01em]"
               >
                 {line}
               </motion.p>

@@ -22,15 +22,15 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ id = 'about' }) => {
       id={id}
       ref={containerRef}
       aria-label="About CSI, Bennett University"
-      className="relative z-10 w-full min-h-[85vh] flex items-center justify-center border-t border-white/10 bg-[#030304] py-24 sm:py-32 overflow-hidden text-[#F4F4F5]"
+      className="relative z-10 w-full min-h-[85vh] flex items-center justify-center border-t border-white/10 bg-[#030304] py-16 sm:py-32 overflow-hidden text-[#F4F4F5]"
     >
-      <div className="relative mx-auto max-w-4xl px-6 sm:px-10 text-center">
+      <div className="relative mx-auto max-w-4xl px-4 sm:px-10 text-center">
         {/* Eyebrow Label */}
         <motion.div
           initial={prefersReducedMotion ? false : { opacity: 0, y: 12 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 12 }}
           transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
-          className="flex items-center justify-center gap-2 mb-4"
+          className="flex items-center justify-center gap-2 mb-3 sm:mb-4"
         >
           <span className="h-1.5 w-1.5 rounded-full bg-white/60" />
           <span className="text-[10px] sm:text-xs font-semibold uppercase tracking-[0.14em] text-[#f2f2f2]/60 font-mono">
@@ -43,7 +43,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ id = 'about' }) => {
           initial={prefersReducedMotion ? false : { opacity: 0, y: 22 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 22 }}
           transition={{ duration: 0.75, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-          className="font-editorial text-4xl sm:text-6xl lg:text-7xl font-normal italic tracking-[-0.02em] text-[#F4F4F5] [text-wrap:balance]"
+          className="font-editorial text-3xl sm:text-6xl lg:text-7xl font-normal italic tracking-[-0.02em] text-[#F4F4F5] [text-wrap:balance]"
         >
           About CSI, Bennett University
         </motion.h2>
@@ -70,7 +70,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ id = 'about' }) => {
                   delay: 0.25 + idx * 0.08,
                   ease: [0.22, 1, 0.36, 1],
                 }}
-                className="text-base sm:text-lg lg:text-xl font-light leading-relaxed text-[#f2f2f2]/85 tracking-[-0.01em]"
+                className="text-sm sm:text-lg lg:text-xl font-light leading-relaxed text-[#f2f2f2]/85 tracking-[-0.01em]"
               >
                 {line}
               </motion.p>

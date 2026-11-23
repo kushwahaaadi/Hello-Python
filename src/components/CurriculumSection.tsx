@@ -48,15 +48,15 @@ export const CurriculumSection: React.FC<CurriculumSectionProps> = ({ id = 'curr
       id={id}
       ref={containerRef}
       aria-label="What You Will Be Taught in the Event"
-      className="relative z-10 w-full min-h-[85vh] flex items-center justify-center border-t border-white/10 bg-[#030304] py-24 sm:py-32 overflow-hidden text-[#F4F4F5]"
+      className="relative z-10 w-full min-h-[85vh] flex items-center justify-center border-t border-white/10 bg-[#030304] py-16 sm:py-32 overflow-hidden text-[#F4F4F5]"
     >
-      <div className="relative mx-auto max-w-4xl px-6 sm:px-10 text-center">
+      <div className="relative mx-auto max-w-4xl px-4 sm:px-10 text-center">
         {/* Eyebrow */}
         <motion.div
           initial={prefersReducedMotion ? false : { opacity: 0, y: 12 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 12 }}
           transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
-          className="flex items-center justify-center gap-2 mb-4"
+          className="flex items-center justify-center gap-2 mb-3 sm:mb-4"
         >
           <span className="h-1.5 w-1.5 rounded-full bg-white/60 animate-pulse" />
           <span className="text-[10px] sm:text-xs font-semibold uppercase tracking-[0.14em] text-[#f2f2f2]/60 font-mono">
@@ -69,7 +69,7 @@ export const CurriculumSection: React.FC<CurriculumSectionProps> = ({ id = 'curr
           initial={prefersReducedMotion ? false : { opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.75, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-          className="font-editorial text-3xl sm:text-5xl lg:text-6xl font-normal italic text-white tracking-[-0.015em] [text-wrap:balance]"
+          className="font-editorial text-2xl sm:text-5xl lg:text-6xl font-normal italic text-white tracking-[-0.015em] [text-wrap:balance]"
         >
           What You Will Be Taught in the Event
         </motion.h2>
@@ -79,13 +79,13 @@ export const CurriculumSection: React.FC<CurriculumSectionProps> = ({ id = 'curr
           initial={prefersReducedMotion ? false : { opacity: 0, y: 14 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 14 }}
           transition={{ duration: 0.7, delay: 0.18, ease: [0.22, 1, 0.36, 1] }}
-          className="mt-3 text-xs sm:text-sm font-light text-[#f2f2f2]/70 font-sans max-w-xl mx-auto"
+          className="mt-2.5 sm:mt-3 text-xs sm:text-sm font-light text-[#f2f2f2]/70 font-sans max-w-xl mx-auto"
         >
           A hands-on, practical curriculum designed to take you from foundational logic to writing working code.
         </motion.p>
 
         {/* Curriculum Grid */}
-        <div className="mt-10 sm:mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 text-left">
+        <div className="mt-8 sm:mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-4 text-left">
           {CURRICULUM_TOPICS.map((topic, idx) => (
             <motion.div
               key={topic.step}
@@ -96,13 +96,13 @@ export const CurriculumSection: React.FC<CurriculumSectionProps> = ({ id = 'curr
                 delay: 0.15 + idx * 0.05,
                 ease: [0.22, 1, 0.36, 1],
               }}
-              className="rounded-2xl border border-white/10 bg-[#0a0a0d]/80 p-5 backdrop-blur-md hover:border-white/20 transition-all shadow-[0_4px_20px_rgba(0,0,0,0.3)]"
+              className="rounded-xl sm:rounded-2xl border border-white/10 bg-[#0a0a0d]/80 p-4 sm:p-5 backdrop-blur-md hover:border-white/20 transition-all shadow-[0_4px_20px_rgba(0,0,0,0.3)]"
             >
-              <div className="flex items-center justify-between mb-3 font-mono text-[11px] text-zinc-400">
+              <div className="flex items-center justify-between mb-2.5 sm:mb-3 font-mono text-[11px] text-zinc-400">
                 <span className="font-bold text-white">{topic.step}</span>
                 <span className="text-[10px] uppercase tracking-wider text-zinc-400">Module</span>
               </div>
-              <h3 className="font-editorial text-xl font-normal italic text-white">
+              <h3 className="font-editorial text-lg sm:text-xl font-normal italic text-white">
                 {topic.title}
               </h3>
               <p className="mt-2 text-xs leading-relaxed text-[#f2f2f2]/75 font-sans font-light">

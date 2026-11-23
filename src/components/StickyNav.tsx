@@ -18,7 +18,7 @@ export const StickyNav: React.FC<StickyNavProps> = ({
           : 'pointer-events-none -translate-y-full opacity-0'
       }`}
     >
-      <div className="mx-auto flex h-14 max-w-[1280px] items-center justify-between gap-8 px-6 sm:px-10">
+      <div className="mx-auto flex h-14 max-w-[1280px] items-center justify-between gap-4 px-4 sm:px-10">
         <a
           href="#top"
           onClick={(e) => {
@@ -78,7 +78,7 @@ export const StickyNav: React.FC<StickyNavProps> = ({
         <button
           type="button"
           onClick={() => onScrollToSection('register')}
-          className="rounded-full border border-white/20 px-4 py-1.5 text-xs font-medium text-white transition-colors hover:border-white/50 hover:bg-white/5 whitespace-nowrap shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+          className="rounded-full border border-white/20 px-3 py-1 sm:px-4 sm:py-1.5 text-[11px] sm:text-xs font-medium text-white transition-colors hover:border-white/50 hover:bg-white/5 whitespace-nowrap shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
         >
           Register Now
         </button>

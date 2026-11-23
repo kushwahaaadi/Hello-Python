@@ -68,24 +68,24 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       />
 
       {/* Top Bar: CSI Emblem + "Computer Society of India" Title + Chapter Leadership Credits */}
-      <div className="relative z-20 mx-auto flex w-full max-w-[1440px] items-center justify-between gap-6 px-5 pt-5 sm:px-8 sm:pt-7">
+      <div className="relative z-20 mx-auto flex w-full max-w-[1440px] flex-col gap-3 px-4 pt-4 sm:flex-row sm:items-center sm:justify-between sm:gap-6 sm:px-8 sm:pt-7">
         {/* Left: Logo Spacer + "Computer Society of India" */}
         <div className="flex items-center gap-3 shrink-0">
-          <div aria-hidden="true" className="h-11 w-11 shrink-0 sm:h-12 sm:w-12" />
+          <div aria-hidden="true" className="h-10 w-10 shrink-0 sm:h-12 sm:w-12" />
           <motion.div
             initial={prefersReducedMotion ? false : { opacity: 0, x: -10 }}
             animate={introReady ? { opacity: 1, x: 0 } : { opacity: 0, x: -10 }}
             transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
             className="flex items-center"
           >
-            <span className="text-[13px] font-medium tracking-tight text-[#f2f2f2] sm:text-[14px] whitespace-nowrap">
+            <span className="text-xs font-semibold tracking-tight text-[#f2f2f2] sm:text-[14px] whitespace-nowrap">
               Computer Society of India
             </span>
           </motion.div>
         </div>
 
         {/* Right Columns: Staggered Chapter Leadership Credits Shifted Accordingly */}
-        <div className="grid flex-1 grid-cols-3 gap-3 pl-4 sm:gap-6 sm:pl-10 md:pl-16">
+        <div className="grid grid-cols-3 gap-2 border-t border-white/5 pt-2.5 sm:border-0 sm:pt-0 sm:flex-1 sm:gap-6 sm:pl-10 md:pl-16">
           {CHAPTER_LEADERS.map((leader, idx) => (
             <motion.div
               key={`${introIteration}-${leader.id}`}
@@ -100,7 +100,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                 idx === 2
                   ? 'justify-self-end text-right'
                   : idx === 1
-                  ? 'justify-self-center text-left'
+                  ? 'justify-self-center text-center sm:text-left'
                   : 'justify-self-start text-left'
               }
             >
@@ -108,13 +108,13 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                 type="button"
                 onClick={() => onSelectLeader(leader)}
                 className={`group rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white ${
-                  idx === 2 ? 'text-right' : 'text-left'
+                  idx === 2 ? 'text-right' : idx === 1 ? 'text-center sm:text-left' : 'text-left'
                 }`}
               >
-                <span className="block text-[11px] font-medium uppercase tracking-[0.05em] text-[#f2f2f2]/55">
+                <span className="block text-[9px] font-medium uppercase tracking-[0.05em] text-[#f2f2f2]/55 sm:text-[11px]">
                   {leader.role}:
                 </span>
-                <span className="mt-0.5 block text-[13px] font-medium text-[#f2f2f2] transition-colors group-hover:underline group-hover:underline-offset-4 whitespace-nowrap">
+                <span className="mt-0.5 block text-[11px] font-medium text-[#f2f2f2] transition-colors group-hover:underline group-hover:underline-offset-4 whitespace-nowrap sm:text-[13px]">
                   {leader.name}
                 </span>
               </button>
@@ -135,7 +135,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               ? undefined
               : { scale: signatureScale, y: signatureY, opacity: scriptOpacity }
           }
-          className="relative w-full max-w-[1220px] px-4 select-none -translate-y-10 sm:-translate-y-12"
+          className="relative w-full max-w-[1220px] px-3 sm:px-4 select-none -translate-y-4 sm:-translate-y-12"
         >
           <HailCsiSignature play={introReady} rotation={-9} className="h-auto w-full" />
         </motion.div>
@@ -145,12 +145,12 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       <div aria-hidden="true" className="pointer-events-none relative flex-1" />
 
       {/* Lower Hero Block: Hello Python */}
-      <div className="relative z-20 mx-auto w-full max-w-full px-4 pb-7 sm:px-8 sm:pb-10 md:pb-14">
+      <div className="relative z-20 mx-auto w-full max-w-full px-3 pb-6 sm:px-8 sm:pb-10 md:pb-14">
         <h1
           aria-label="Hello Python"
           className="font-editorial flex w-full items-baseline justify-between font-normal italic tracking-[-0.025em] text-[#F4F4F5] select-none"
           style={{
-            fontSize: 'clamp(4.2rem, 15.5vw, 15.2rem)',
+            fontSize: 'clamp(2.75rem, 13.5vw, 15.2rem)',
             lineHeight: 0.92,
           }}
         >
