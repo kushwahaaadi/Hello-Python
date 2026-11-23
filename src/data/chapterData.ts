@@ -1,5 +1,12 @@
 export type WorkCategory = 'All' | 'Python' | 'Vision & AI' | 'Systems' | 'Events';
 
+import archiveImg1 from '../assets/images/archive/archive_1.jpg';
+import archiveImg2 from '../assets/images/archive/archive_2.jpg';
+import archiveImg3 from '../assets/images/archive/archive_3.jpg';
+import archiveImg4 from '../assets/images/archive/archive_4.jpg';
+import archiveImg5 from '../assets/images/archive/archive_5.jpg';
+import archiveImg6 from '../assets/images/archive/archive_6.jpg';
+
 export interface LeaderProfile {
   id: string;
   role: string;
@@ -93,7 +100,7 @@ export const SHOWCASE_PROJECTS: ShowcaseProject[] = [
     architecture:
       'Computes directional surface normals against a high-contrast chiaroscuro light vector, mapping luminance buckets to a curated jewel-tone mosaic palette with spatial dithering.',
     impactMetric: '18,400 live tiles rendered per frame',
-    image: '/src/assets/images/work_mosaic_engine_1795292707218.jpg',
+    image: archiveImg1,
     fallbackTone: 'from-emerald-950 via-slate-950 to-indigo-950',
     span: 'wide',
     codeExcerpt: `def shade_tile(nx: float, ny: float, nz: float) -> float:
@@ -113,7 +120,7 @@ export const SHOWCASE_PROJECTS: ShowcaseProject[] = [
     architecture:
       'Built around typed command registries, structured TOML manifests, and deterministic virtual-environment bootstrapping with sub-120ms cold startup.',
     impactMetric: '420+ student repos bootstrapped',
-    image: '/src/assets/images/work_python_cli_1795292707439.jpg',
+    image: archiveImg2,
     fallbackTone: 'from-zinc-900 via-neutral-950 to-black',
     span: 'standard',
     codeExcerpt: `@app.command()
@@ -133,13 +140,13 @@ def init(project: str, template: str = "fastapi"):
     architecture:
       'Streams quantized point tensors over WebSockets into a lightweight Delaunay triangulation worker with adaptive edge decimation.',
     impactMetric: '4.2ms average mesh pass',
-    image: '/src/assets/images/work_neural_vision_1795292706624.jpg',
+    image: archiveImg3,
     fallbackTone: 'from-cyan-950 via-zinc-950 to-violet-950',
     span: 'standard',
     codeExcerpt: `mesh = reconstruct_manifold(
     points=depth_cloud.downsample(0.02),
     rim_weight=0.85,
-)`,
+    ) `,
   },
   {
     id: 'hacknight-series',
@@ -153,7 +160,7 @@ def init(project: str, template: str = "fastapi"):
     architecture:
       'Structured around 4-person cross-disciplinary pods, live architecture critiques at midnight, and public demo monographs archived by CSI.',
     impactMetric: '64 shipped open-source builds',
-    image: '/src/assets/images/work_hackathon_archive_1795292707318.jpg',
+    image: archiveImg4,
     fallbackTone: 'from-neutral-900 via-zinc-950 to-black',
     span: 'wide',
     codeExcerpt: `cohort = ChapterCohort(
@@ -173,7 +180,7 @@ def init(project: str, template: str = "fastapi"):
     architecture:
       'Combines an async FastAPI review queue with automated Lighthouse typography audits and structured project case-study templates.',
     impactMetric: '38 student ventures launched',
-    image: '/src/assets/images/work_python_cli_1795292707439.jpg',
+    image: archiveImg5,
     fallbackTone: 'from-stone-900 via-zinc-950 to-black',
     span: 'standard',
     codeExcerpt: `async def publish_showcase(entry: Monograph):
@@ -192,7 +199,7 @@ def init(project: str, template: str = "fastapi"):
     architecture:
       'Fan-out consumer groups built strictly on standard-library asyncio primitives and bounded ring buffers for resilient burst handling.',
     impactMetric: '99.94% uptime across 18 events',
-    image: '/src/assets/images/work_neural_vision_1795292706624.jpg',
+    image: archiveImg6,
     fallbackTone: 'from-slate-900 via-zinc-950 to-black',
     span: 'standard',
     codeExcerpt: `async with TaskGroup() as tg:
