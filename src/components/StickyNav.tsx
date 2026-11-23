@@ -80,7 +80,7 @@ export const StickyNav: React.FC<StickyNavProps> = ({
           onClick={() => onScrollToSection('register')}
           className="rounded-full border border-white/20 px-4 py-1.5 text-xs font-medium text-white transition-colors hover:border-white/50 hover:bg-white/5 whitespace-nowrap shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
         >
-          Join Chapter
+          Register Now
         </button>
       </div>
     </header>
