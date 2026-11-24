@@ -10,19 +10,12 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ id = 'about' }) => {
   const isInView = useInView(containerRef, { once: true, margin: '-50px 0px' });
   const prefersReducedMotion = useReducedMotion();
 
-  const textLines = [
-    'Computer Society of India (CSI), Bennett University is a student-led technical chapter',
-    'promoting technology, innovation, research, and professional development. We create',
-    'opportunities for students to learn beyond the classroom — strengthening both',
-    'technical and soft skills while encouraging collaboration, creativity, and problem-solving.',
-  ];
-
   return (
     <section
       id={id}
       ref={containerRef}
       aria-label="About CSI, Bennett University"
-      className="relative z-10 w-full min-h-[85vh] flex items-center justify-center border-t border-white/10 bg-[#030304] py-16 sm:py-32 overflow-hidden text-[#F4F4F5]"
+      className="relative z-10 w-full flex items-center justify-center border-t border-white/10 bg-[#030304] py-16 sm:py-32 overflow-hidden text-[#F4F4F5]"
     >
       <div className="relative mx-auto max-w-4xl px-4 sm:px-10 text-center">
         {/* Eyebrow Label */}
@@ -53,30 +46,25 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ id = 'about' }) => {
           initial={prefersReducedMotion ? false : { opacity: 0, y: 14 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 14 }}
           transition={{ duration: 0.7, delay: 0.18, ease: [0.22, 1, 0.36, 1] }}
-          className="mt-3 text-xs sm:text-sm font-light uppercase tracking-[0.08em] text-[#f2f2f2]/60 font-mono"
+          className="mt-2.5 sm:mt-3 text-xs sm:text-sm font-light uppercase tracking-[0.08em] text-[#f2f2f2]/60 font-mono"
         >
           School of Computer Science & Engineering
         </motion.p>
 
         {/* Body Text */}
-        <div className="mt-8 sm:mt-10 space-y-3 font-sans max-w-3xl mx-auto">
-          {textLines.map((line, idx) => (
-            <div key={idx} className="overflow-hidden">
-              <motion.p
-                initial={prefersReducedMotion ? false : { y: '100%', opacity: 0 }}
-                animate={isInView ? { y: '0%', opacity: 1 } : { y: '0%', opacity: 1 }}
-                transition={{
-                  duration: 0.7,
-                  delay: 0.25 + idx * 0.08,
-                  ease: [0.22, 1, 0.36, 1],
-                }}
-                className="text-sm sm:text-lg lg:text-xl font-light leading-relaxed text-[#f2f2f2]/85 tracking-[-0.01em]"
-              >
-                {line}
-              </motion.p>
-            </div>
-          ))}
-        </div>
+        <motion.div
+          initial={prefersReducedMotion ? false : { opacity: 0, y: 18 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 18 }}
+          transition={{ duration: 0.75, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
+          className="mt-6 sm:mt-10 font-sans max-w-3xl mx-auto space-y-3.5 text-sm sm:text-lg lg:text-xl font-light leading-relaxed sm:leading-loose text-[#f2f2f2]/85 tracking-[-0.01em]"
+        >
+          <p>
+            Computer Society of India (CSI), Bennett University is a student-led technical chapter promoting technology, innovation, research, and professional development.
+          </p>
+          <p className="text-zinc-400 text-xs sm:text-base">
+            We create opportunities for students to learn beyond the classroom — strengthening both technical and soft skills while encouraging collaboration, creativity, and real-world problem-solving.
+          </p>
+        </motion.div>
 
         {/* Minimal Editorial Badges */}
         <motion.div

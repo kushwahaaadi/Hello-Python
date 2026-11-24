@@ -72,7 +72,7 @@ export const RegistrationSection: React.FC = () => {
     <section
       id="register"
       aria-label="CSI Student Registration"
-      className="relative z-10 min-h-screen w-full border-t border-white/10 bg-[#050505] py-24 sm:py-32 text-[#F4F4F5] overflow-hidden"
+      className="relative z-10 w-full border-t border-white/10 bg-[#050505] py-14 sm:py-28 text-[#F4F4F5] overflow-hidden"
     >
       {/* Background ambient particle canvas */}
       <canvas

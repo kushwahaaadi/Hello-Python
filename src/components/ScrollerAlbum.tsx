@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { motion, useReducedMotion } from 'motion/react';
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import { SHOWCASE_PROJECTS, ShowcaseProject } from '../data/chapterData';
 
 interface ScrollerAlbumProps {
@@ -216,6 +216,8 @@ export const ScrollerAlbum: React.FC<ScrollerAlbumProps> = ({
                   <img
                     src={project.image}
                     alt={project.title}
+                    loading="eager"
+                    decoding="async"
                     className="h-full w-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105"
                   />
                   <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#0a0a0d] via-transparent to-black/20" />
@@ -249,6 +251,43 @@ export const ScrollerAlbum: React.FC<ScrollerAlbumProps> = ({
             );
           })}
         </motion.div>
+      </div>
+
+      {/* Mobile Controls: Touch Prev/Next & Jump Dots */}
+      <div className="relative z-20 flex sm:hidden items-center justify-between px-6 mt-4">
+        <button
+          type="button"
+          onClick={() => setActiveIndex((prev) => Math.max(0, prev - 1))}
+          disabled={activeIndex === 0}
+          className="flex h-8 w-8 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white disabled:opacity-25 disabled:pointer-events-none transition-opacity"
+          aria-label="Previous project"
+        >
+          <ChevronLeft className="h-4 w-4" />
+        </button>
+
+        <div className="flex items-center gap-1.5">
+          {projects.map((_, idx) => (
+            <button
+              key={idx}
+              type="button"
+              onClick={() => setActiveIndex(idx)}
+              className={`h-1.5 rounded-full transition-all duration-300 ${
+                idx === activeIndex ? 'w-5 bg-white' : 'w-1.5 bg-white/25'
+              }`}
+              aria-label={`Go to project slide ${idx + 1}`}
+            />
+          ))}
+        </div>
+
+        <button
+          type="button"
+          onClick={() => setActiveIndex((prev) => Math.min(count - 1, prev + 1))}
+          disabled={activeIndex === count - 1}
+          className="flex h-8 w-8 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white disabled:opacity-25 disabled:pointer-events-none transition-opacity"
+          aria-label="Next project"
+        >
+          <ChevronRight className="h-4 w-4" />
+        </button>
       </div>
     </section>
   );

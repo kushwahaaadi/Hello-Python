@@ -48,7 +48,7 @@ export const CurriculumSection: React.FC<CurriculumSectionProps> = ({ id = 'curr
       id={id}
       ref={containerRef}
       aria-label="What You Will Be Taught in the Event"
-      className="relative z-10 w-full min-h-[85vh] flex items-center justify-center border-t border-white/10 bg-[#030304] py-16 sm:py-32 overflow-hidden text-[#F4F4F5]"
+      className="relative z-10 w-full flex items-center justify-center border-t border-white/10 bg-[#030304] py-16 sm:py-32 overflow-hidden text-[#F4F4F5]"
     >
       <div className="relative mx-auto max-w-4xl px-4 sm:px-10 text-center">
         {/* Eyebrow */}

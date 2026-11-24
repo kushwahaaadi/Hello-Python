@@ -62,7 +62,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
     <section
       id="top"
       ref={heroRef}
-      className="relative flex min-h-screen w-full flex-col justify-between overflow-hidden bg-[#030304]"
+      className="relative flex min-h-screen min-h-dvh w-full flex-col justify-between overflow-hidden bg-[#030304]"
     >
       {/* Permanent Python Logo Particle Formation Canvas (z-[10]) */}
       <PythonLogoParticleCanvas
@@ -124,10 +124,14 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                   idx === 2 ? 'text-right' : idx === 1 ? 'text-center sm:text-left' : 'text-left'
                 }`}
               >
-                <span className="block text-[9px] font-medium uppercase tracking-[0.05em] text-[#f2f2f2]/55 sm:text-[11px]">
-                  {leader.role}:
+                <span className="block text-[8px] sm:text-[11px] font-medium uppercase tracking-[0.04em] text-[#f2f2f2]/55">
+                  {isMobile && leader.role === 'Vice President'
+                    ? 'VP:'
+                    : isMobile && leader.role === 'General Secretary'
+                    ? 'Gen Sec:'
+                    : `${leader.role}:`}
                 </span>
-                <span className="mt-0.5 block text-[11px] font-medium text-[#f2f2f2] transition-colors group-hover:underline group-hover:underline-offset-4 whitespace-nowrap sm:text-[13px]">
+                <span className="mt-0.5 block text-[10px] sm:text-[13px] font-medium text-[#f2f2f2] transition-colors group-hover:underline group-hover:underline-offset-4 whitespace-nowrap">
                   {leader.name}
                 </span>
               </button>
@@ -148,9 +152,13 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               ? undefined
               : { scale: signatureScale, y: signatureY, opacity: scriptOpacity }
           }
-          className="relative w-full max-w-[1220px] px-2 sm:px-4 select-none translate-y-[24.5vh] sm:-translate-y-12"
+          className={`relative w-full select-none ${
+            isMobile
+              ? 'max-w-[340px] px-3 translate-y-[15vh]'
+              : 'max-w-[1220px] px-4 -translate-y-12'
+          }`}
         >
-          <HailCsiSignature play={introReady} rotation={isMobile ? -5 : -9} className="h-auto w-full" />
+          <HailCsiSignature play={introReady} rotation={isMobile ? -3 : -9} className="h-auto w-full" />
         </motion.div>
       </div>
 
@@ -163,7 +171,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           aria-label="Hello Python"
           className="font-editorial flex w-full items-baseline justify-between font-normal italic tracking-[-0.025em] text-[#F4F4F5] select-none"
           style={{
-            fontSize: 'clamp(2.75rem, 13.5vw, 15.2rem)',
+            fontSize: 'clamp(2.35rem, 12vw, 15.2rem)',
             lineHeight: 0.92,
           }}
         >

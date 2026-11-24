@@ -11,21 +11,12 @@ export const HackaccinoSection: React.FC<HackaccinoSectionProps> = ({ id = 'hack
 
   const isContainerInView = useInView(containerRef, { once: true, margin: '-40px 0px' });
 
-  const firstBlockLines = [
-    "Hackaccino is one of Bennett University's biggest hackathons, organized by the",
-    'Computer Society of India (CSI), Bennett University. With 1,200+ participants and an',
-    'intense 24-hour building experience, Hackaccino brings together developers,',
-    'designers, innovators, and problem-solvers to transform ideas into technology-driven',
-    'solutions for real-world challenges.',
-    'It is a massive collaborative engineering residency powered by an equally passionate organizing team.',
-  ];
-
   return (
     <section
       id={id}
       ref={containerRef}
       aria-label="Hackaccino - Flagship Hackathon"
-      className="relative z-10 w-full min-h-[85vh] flex items-center justify-center border-t border-white/10 bg-[#030304] py-16 sm:py-32 overflow-hidden text-[#F4F4F5]"
+      className="relative z-10 w-full flex items-center justify-center border-t border-white/10 bg-[#030304] py-16 sm:py-32 overflow-hidden text-[#F4F4F5]"
     >
       <div className="relative mx-auto max-w-4xl px-4 sm:px-10 text-center">
         {/* Eyebrow */}
@@ -83,24 +74,19 @@ export const HackaccinoSection: React.FC<HackaccinoSectionProps> = ({ id = 'hack
         </motion.div>
 
         {/* Narrative Paragraph Block */}
-        <div className="mt-8 sm:mt-10 space-y-3 font-sans max-w-3xl mx-auto">
-          {firstBlockLines.map((line, idx) => (
-            <div key={idx} className="overflow-hidden">
-              <motion.p
-                initial={prefersReducedMotion ? false : { y: '100%', opacity: 0 }}
-                animate={isContainerInView ? { y: '0%', opacity: 1 } : { y: '0%', opacity: 1 }}
-                transition={{
-                  duration: 0.7,
-                  delay: 0.25 + idx * 0.06,
-                  ease: [0.22, 1, 0.36, 1],
-                }}
-                className="text-sm sm:text-lg lg:text-xl font-light leading-relaxed text-[#f2f2f2]/85 tracking-[-0.01em]"
-              >
-                {line}
-              </motion.p>
-            </div>
-          ))}
-        </div>
+        <motion.div
+          initial={prefersReducedMotion ? false : { opacity: 0, y: 18 }}
+          animate={isContainerInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 18 }}
+          transition={{ duration: 0.75, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+          className="mt-6 sm:mt-10 font-sans max-w-3xl mx-auto space-y-3.5 text-sm sm:text-lg lg:text-xl font-light leading-relaxed sm:leading-loose text-[#f2f2f2]/85 tracking-[-0.01em]"
+        >
+          <p>
+            Hackaccino is one of Bennett University&apos;s biggest hackathons, organized by the Computer Society of India (CSI), Bennett University. With 1,200+ participants and an intense 24-hour building experience, Hackaccino brings together developers, designers, innovators, and problem-solvers to transform ideas into technology-driven solutions for real-world challenges.
+          </p>
+          <p className="text-zinc-400 text-xs sm:text-base">
+            It is a massive collaborative engineering residency powered by an equally passionate organizing team.
+          </p>
+        </motion.div>
 
         {/* Minimal Footer Motto */}
         <motion.p

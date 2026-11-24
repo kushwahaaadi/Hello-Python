@@ -49,7 +49,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#030304] text-[#F4F4F5]">
+    <div className="min-h-screen min-h-dvh w-full overflow-x-hidden bg-[#030304] text-[#F4F4F5]">
       <Floating3DCsiLogo
         visible={introReady}
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}

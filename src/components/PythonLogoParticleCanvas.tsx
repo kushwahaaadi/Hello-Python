@@ -102,17 +102,17 @@ export const PythonLogoParticleCanvas: React.FC<PythonLogoParticleCanvasProps> =
 
     const getLogoSpan = (w: number, h: number) => {
       if (w < 640) {
-        return Math.min(320, w * 0.82, h * 0.46);
+        return Math.min(270, w * 0.74, h * 0.38);
       }
       if (w < 1024) {
-        return Math.min(440, w * 0.58, h * 0.52);
+        return Math.min(420, w * 0.58, h * 0.50);
       }
       return Math.min(540, w * 0.45, h * 0.60);
     };
 
     let logoSpan = getLogoSpan(window.innerWidth, window.innerHeight);
     let centerX = window.innerWidth / 2;
-    let centerY = window.innerHeight * 0.46; // Elegantly positioned above Hello Python
+    let centerY = window.innerWidth < 640 ? window.innerHeight * 0.39 : window.innerHeight * 0.46;
 
     // Initialize particles
     const particles: Particle[] = PYTHON_LOGO_POINTS.map((pt) => {
@@ -170,7 +170,7 @@ export const PythonLogoParticleCanvas: React.FC<PythonLogoParticleCanvasProps> =
 
       logoSpan = getLogoSpan(width, height);
       centerX = width / 2;
-      centerY = height * 0.46;
+      centerY = width < 640 ? height * 0.39 : height * 0.46;
     };
 
     handleResize();

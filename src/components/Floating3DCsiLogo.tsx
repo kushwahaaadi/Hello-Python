@@ -105,20 +105,20 @@ export const Floating3DCsiLogo: React.FC<Floating3DCsiLogoProps> = ({
     smoothScroll,
     [0, 0.02, 0.14, 0.3, 0.52, 0.74, 0.92, 1],
     isMobile
-      ? ['16px', '16px', '6vw', '62vw', '65vw', '6vw', '62vw', '65vw']
+      ? ['16px', '16px', 'calc(100vw - 56px)', 'calc(100vw - 56px)', 'calc(100vw - 56px)', 'calc(100vw - 56px)', 'calc(100vw - 56px)', 'calc(100vw - 56px)']
       : ['2.2vw', '2.2vw', '10vw', '74vw', '78vw', '8vw', '76vw', '78vw']
   );
   const posY = useTransform(
     smoothScroll,
     [0, 0.02, 0.14, 0.3, 0.52, 0.74, 0.92, 1],
     isMobile
-      ? ['16px', '16px', '10vh', '15vh', '38vh', '52vh', '64vh', '66vh']
+      ? ['16px', '16px', 'calc(100dvh - 66px)', 'calc(100dvh - 66px)', 'calc(100dvh - 66px)', 'calc(100dvh - 66px)', 'calc(100dvh - 66px)', 'calc(100dvh - 66px)']
       : ['2.2vh', '2.2vh', '14vh', '18vh', '42vh', '56vh', '68vh', '70vh']
   );
   const floatScale = useTransform(
     smoothScroll,
     [0, 0.02, 0.1, 0.24, 1],
-    isMobile ? [1, 1, 1.35, 1.75, 1.75] : [1, 1, 1.85, 3, 3]
+    isMobile ? [1, 1, 1, 1, 1] : [1, 1, 1.85, 3, 3]
   );
   const scrollSpin = useTransform(smoothScroll, [0, 0.02, 1], [0, 0, 540]);
   const scrollTiltZ = useTransform(smoothScroll, [0, 0.02, 0.3, 0.65, 1], [0, 0, 12, -10, 0]);
